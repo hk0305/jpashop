@@ -4,6 +4,8 @@ import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.Setter;
 
+import static jakarta.persistence.FetchType.*;
+
 /**
  * @author hk0305
  */
@@ -23,7 +25,7 @@ public class Delivery {
      * 상품 주문을 통해 배송 정보를 확인하기 때문이다.
      * 도메인 설계에 따라 Delivery가 연관관계의 주인이 될 수 있다.
      */
-    @OneToOne(mappedBy = "delivery")
+    @OneToOne(mappedBy = "delivery", fetch = LAZY)
     private Order order;
 
     @Embedded

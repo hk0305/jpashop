@@ -27,6 +27,8 @@ public class Member {
 
     /**
      * order의 member의 값에 맵핑
+     * 컬렉션은 필드에서 바로 초기화 하는 것이 안전하다.
+     * 컬렉션을 바꾸지 말자
      */
     @OneToMany(mappedBy = "member")
     private List<Order> orders = new ArrayList<>();
